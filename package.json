@@ -4,9 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+
     "stages": "npm run stage-hello-world && npm run stage-rest-api",
+    "stages:pretty": "npm run stage-hello-world:pretty && npm run stage-rest-api:pretty",
+
     "stage-hello-world": "babel-node basic-usage.js",
+    "stage-hello-world:pretty": "npm run stage-hello-world | prettyjson",
+
     "stage-rest-api": "babel-node pokemon-query.js",
+    "stage-rest-api:pretty": "npm run stage-rest-api | prettyjson",
 
     "dev:server": "nodemon -e js --exec 'babel-node' pokemon-server.js",
     "dev:query": "cat curl-query | bash"
@@ -16,7 +22,8 @@
   "devDependencies": {
     "@schibstedspain/frontend-pre-commit-rules": "^5.0.0",
     "babel": "^5.6.14",
-    "nodemon": "^1.3.7"
+    "nodemon": "^1.3.7",
+    "prettyjson": "^1.1.2"
   },
   "dependencies": {
     "express": "^4.13.1",

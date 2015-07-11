@@ -14,5 +14,25 @@ const query = `
   }
 `;
 
-graphql(PokemonSchema, query, null, {pokemonId: 7}).then(result => console.log(JSON.stringify(result)));
+var IntrospectionQuery = `
+  query IntrospectionTypeQuery {
+    __schema {
+      types {
+        name
+      }
+    }
+  }
+`;
 
+
+(async function MultiQueries(){
+
+  const pokemon = await graphql(PokemonSchema, query, null, {pokemonId: 7});
+  const intropection = await graphql(PokemonSchema, IntrospectionQuery);
+
+  console.log(JSON.stringify({
+    pokemon,
+    intropection
+  }));
+
+}());

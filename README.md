@@ -22,3 +22,7 @@ Para poder lanzar poder ejecutar cada una de las fases:
   * `$ npm run dev:serve`: Pone a la escucha un servidor en el puerto **8080**
   * `$ npm run dev:query`: Lanza una query arbitraria contra ese servidor. La query que lanza la puedes encontrar en el fichero "curl-query". Por si deséas cambiarla.
 
+Como la salida JSON directamente en consola puede ser muy complicada de leer, hay un par de tarea que nos pueden ayudar a tener una salida un poco mejor:
+
+* `$ npm run stage-hello-world:pretty`
+* `$ npm run stage-rest-api:pretty`

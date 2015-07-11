@@ -28,6 +28,6 @@ graphql(schema, query).then(result => {
   // {
   //   data: { hello: "world" }
   // }
-  console.log(result);
+  console.log(JSON.stringify(result));
 
 });
