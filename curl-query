@@ -1,0 +1,3 @@
+curl -H "Content-Type: application/json" \
+     -X POST -d '{"query":"query PokemonQuery($pokemonId: String!) {pokemon(id: $pokemonId) {name\ndefense}}", "pokemonId": "7"}' \
+     http://localhost:8080
