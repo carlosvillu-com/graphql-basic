@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run dev:server",
-    "dev:server": "nodemon -e js --exec 'babel-node' pokemon-server.js"
+    "stages": "npm run stage-hello-world && npm run stage-rest-api",
+    "stage-hello-world": "babel-node basic-usage.js",
+    "stage-rest-api": "babel-node pokemon-query.js",
+
+    "dev:server": "nodemon -e js --exec 'babel-node' pokemon-server.js",
+    "dev:query": "cat curl-query | bash"
   },
   "author": "",
   "license": "ISC",

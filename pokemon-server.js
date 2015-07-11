@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 app.post('/', (req, res, next) => {
   const {query, pokemonId} = req.body;
-  graphql(PokemonSchema, query, null, {pokemonId}).then(res.send.bind(res));
+  graphql(PokemonSchema, query, null, {pokemonId}).then(res.json.bind(res));
 });
 
 app.listen(PORT, () => {
