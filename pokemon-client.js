@@ -2,9 +2,9 @@ import fetch from 'node-fetch';
 
 const BASE_API = 'http://pokeapi.co';
 
-export function pokemon({id = 1} = {}){
-  return fetch(`${BASE_API}/api/v1/pokemon/${id}`)
-          .then((response) => response.json());
+export async function pokemon({id = 1} = {}){
+  var response = await fetch(`${BASE_API}/api/v1/pokemon/${id}`);
+  return response.json();
 };
 
 export async function descriptions({pokemon = false} = {}){
